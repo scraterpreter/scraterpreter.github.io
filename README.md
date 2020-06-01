@@ -1,37 +1,48 @@
-## Welcome to GitHub Pages
+**Scraterpreter**: the **SCRA**tch in**TERPRETER**
 
-You can use the [editor on GitHub](https://github.com/scraterpreter/scraterpreter.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+[![Scrape Banner](https://cdn.paullee.dev/scrape/banner.png)](https://cdn.paullee.dev/scrape/dash.jpg)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Scrape is an interpreter to run Scratch projects.
+First compile .sb3 files into .scrape files using [Scrapec](https://github.com/scraterpreter/scrapec), then run .scrape files using Scrape.
 
-### Markdown
+Click [here](https://vimeo.com/424433102) to view a demo.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Join our [Discord Server](https://discord.gg/3zV37x4) for support!
 
-```markdown
-Syntax highlighted code block
+See [COMPATIBILITY.md](COMPATIBILITY.md) for information on compatibility with Scratch.
 
-# Header 1
-## Header 2
-### Header 3
+## Installation and Usage
+### Linux (Snap)
+Scrape Snaps are available for installation at the Snap Store.
 
-- Bulleted
-- List
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/scraterpreter)
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```bash
+sudo snap install scraterpreter # install scrape
+scraterpreter.scrapec project.sb3 # compile the .sb3 file into a .scrape file
+scraterpreter.scrape project.scrape # run the .scrape file
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Windows (MSI and PIP)
+Scrape is available as an MSI on our [releases page](https://github.com/scraterpreter/scrape/releases).
+Scrapec is available as [a PIP package on the PYPI](https://pypi.org/project/scrapec/).
+There may be some issues with PATH on Windows. Please contact us by creating [a GitHub issue](https://github.com/scraterpreter/scrape/issues/new) or by joining our [Discord Server](https://discord.gg/3zV37x4).
 
-### Jekyll Themes
+### Binary
+If you follow the instructions listed below to build scrape, and instructions listed [here](https://github.com/scraterpreter/scrapec/blob/master/README.md) to compile scrapec, these commands should be used to run scrape.
+```bash
+scrapec project.sb3 # compile the .sb3 file into a .scrape file
+scrape project.scrape # run the .scrape file
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/scraterpreter/scraterpreter.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Build Instructions
+### Linux
+```bash
+git clone https://github.com/scraterpreter/scrape.git # clones the repository
+cd scrape
+mkdir build # creates the build directory
+cd build
+cmake .. # uses CMake to create a Makefile
+make # builds the source code
+make install # installs the binary
+```
